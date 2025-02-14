@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(234, 226, 217);
+  width: 100%;
+  height: 100%;
+    font-family: "Montserrat", serif;
+}
+
+.socials {
+  margin: 20px;
+}
+
+.logo {
+  height: 37px;
+  width: auto;
+  margin-bottom: 8px;
+}
+
+.youtube-logo,
+.tiktok-logo {
+  height: 60px;
+  width: auto;
+  margin-left: -11px;
+}
+
+.social-link {
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.tiktok-link {
+  position: absolute;
+  top: 32%;
+}
+
+.yt-link {
+  position: absolute;
+  top: 19%;
+}
+
+.social-link:hover {
+  border-bottom: 2px solid orangered;
+}
+
+.socials-container {
+  width: 600px;
+  margin-left: 60px;
+}
+
+.social-media-handles {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+}
+
+/* Enquiries */
+.numbers-section {
+  margin-left: 60px;
+}
+
+.enquiries {
+  margin: 20px;
+}
+
+.phone {
+  font-size: 15px;
+  letter-spacing: 0.7px;
+  margin-bottom: 4px;
+}
+
+/* address */
+.address {
+    margin: 20px 0px 10px 80px;
+}
+
+address{
+    margin-left: 60px;
+    margin-bottom: 4px;
+    font-size: 25px;
+    font-weight: bolder;
+     font-family: "Ephesis", serif;
+}
+
+.more{
+    margin: 5px 0px 5px 80px;
+    font-size: 15px;
+}
+
+.home{
+    text-decoration: none;
+    font-size: 16px;
+    color: orangered;
+    display: block;
+    margin: 20px 0px 10px 100px;
+}
+
+footer {
+  border: 2px solid transparent;
+  background-color: #858282;
+  justify-items: center;
+  font-size: 14px;
+  letter-spacing: 0.7;
+}
+
+.heading{
+  display: flex;
+}

@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.size-6{
+    height: 50px;
+    width: 50px;
+}
+
+.profile-picture{
+    width: 200px;
+    height: 150px;
+    margin: 0 auto;
+      position: relative;
+}
+
+.picture{
+    height: 100px;
+    width: 200px;
+    stroke: black;  
+}
+
+.gallery{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 2%;
+    left: 60%;
+    stroke: grey;
+}
+
+.user{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+ 
+}
+
+.edit{
+    width: 20px;
+    height: 20px;
+    stroke: grey;
+}
+
+.usernameArea{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.register-popup{
+    height: 550px;
+    width: 300px;
+    margin: 0 auto;
+    background-color: rgb(231, 225, 225);
+    border-radius: 20px;
+}
+
+.info-section{
+    width: 250px;
+    margin-left: 20px;
+    border: 2px inset black;
+    padding: 30px 0px 30px 30px;
+    border-radius: 20px;
+    margin-top: -10px;
+}
+
+.create{
+    margin-top: -10px;
+    margin-bottom: 14px;
+    font-size: 20px;
+}
+
+.category{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.input{
+    height: 30px;
+    width: 200px;
+    border-radius: 8px;
+    border-color:  transparent;
+    margin-bottom: 10px;
+}
+
+.check{
+    width: 10px;
+    height: 10px;
+}
+
+.info-section button{
+    margin-left: 40px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 12px;
+}
