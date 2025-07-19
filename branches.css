@@ -5,8 +5,13 @@
   padding: 0;
 }
 
+:root{
+  --bodyColor: rgb(230, 227, 220);
+
+}
+
 body {
-  background-color: rgb(234, 226, 217);
+  background-color: var(--bodyColor);
   font-family: "Montserrat", serif;
 }
 

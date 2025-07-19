@@ -107,6 +107,13 @@ body {
   left: 23%;
 }
 
+.mens-descr{
+    position: absolute;
+  top: 60%;
+  left: 44%;
+  color: #858282;
+}
+
 .frontals-descr {
   line-height: 38px;
   position: absolute;
@@ -114,10 +121,10 @@ body {
   left: 64%;
 }
 
-.mens-descr {
+.mens-hair {
   position: absolute;
   top: 60%;
-  left: 37%;
+  left: 28%;
   color: #858282;
 }
 
@@ -142,7 +149,7 @@ body {
 
 .write-up {
   color: black;
-  font-size: 13px;
+  font-size: 16px;
   font-family: "Montserrat", serif;
 }
 
@@ -155,7 +162,7 @@ body {
 .mens-write-up {
   position: absolute;
   top: 70%;
-  left: 40%;
+  left: 48%;
   color: orangered;
   font-weight: bold;
 }
@@ -186,7 +193,7 @@ body {
 
 .write-up {
  animation-name: fadeIn;
- animation-duration: 3s;
+ animation-duration: 1s;
  animation-timing-function: ease-in-out;
  animation-delay: 0.5s;
  animation-iteration-count: infinite;

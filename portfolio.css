@@ -10,8 +10,8 @@
 
 body {
   width: 100vw;
+  overflow-x: hidden;
   font-family: "Mystery Quest", serif;
-  /* background-color: rgb(131, 194, 236); */
   background: url(portfolioPics/flower\ background.jpeg);
   background-size: auto 500px;
   background-size: cover;
@@ -19,23 +19,56 @@ body {
   background-repeat: no-repeat;
 }
 
+.hidden {
+  display: none;
+}
+
 .logo {
   cursor: pointer;
   margin-left: 40px;
-  font-size: 40px;
+  width: 300px;
+  font-size: 38px;
   letter-spacing: 2px;
+  text-decoration: none;
+  color: orangered;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: orangered;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 1px groove black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background: orangered;
+  transition: 0.4s;
 }
 
 .menu {
-  padding: 12px;
-  border-radius: 15px;
+  z-index: 100;
 }
 
 .nav-links {
-  text-decoration: none;
-  color: black;
+  list-style: none;
+  display: flex;
+  gap: 3rem;
   cursor: pointer;
   margin-right: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
   font-weight: bold;
   font-size: 20px;
   transition: 0.3s ease;
@@ -43,12 +76,12 @@ body {
   font-family: "Montserrat", serif;
 }
 
-.nav-links:hover {
+.nav-links a:hover {
   color: orangered;
   border-bottom: 1.5px solid orangered;
 }
 
-.intro-page header {
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -56,8 +89,7 @@ body {
   height: 90px;
   display: flex;
   align-items: center;
-  gap: 350px;
-  /* background-color: pink; */
+  justify-content: space-between;
 }
 
 .sticky {
@@ -75,17 +107,17 @@ body {
   overflow-x: hidden;
 }
 
-.name {
+.write-up-corner p {
   font-weight: bold;
   font-size: 20px;
 }
 
-span {
+.write-up-corner span {
   color: orangered;
   font-size: 25px;
 }
 
-h2 {
+.write-up-corner h2 {
   font-size: 35px;
   letter-spacing: 2px;
   margin-bottom: 10px;
@@ -100,15 +132,15 @@ h2 {
   font-size: 15px;
 }
 
-.book {
+.write-up-corner button {
   padding: 17px;
   background-color: transparent;
   border-radius: 15px;
-  border-width: 1.5px;
+  border-width: 1px;
   border-style: groove;
   font-weight: bolder;
   font-size: 15px;
-  box-shadow: 3px 3px 3px rgb(65, 63, 63);
+  box-shadow: 3px 3px 1px rgb(65, 63, 63);
   transition: 0.5s all ease-in;
   font-family: "Montserrat", serif;
   cursor: pointer;
@@ -119,6 +151,7 @@ h2 {
 }
 
 .first-img {
+  max-width: 300px;
   height: 165px;
   width: auto;
   border-radius: 20px;
@@ -129,6 +162,7 @@ h2 {
 }
 
 .second-img {
+  max-width: 300px;
   height: 230px;
   width: auto;
   border-radius: 10px;
@@ -139,6 +173,7 @@ h2 {
 }
 
 .third-img {
+  max-width: 300px;
   height: 280px;
   width: auto;
   border-radius: 25px;
@@ -149,6 +184,7 @@ h2 {
 }
 
 .fourth-img {
+  max-width: 300px;
   height: 165px;
   width: auto;
   border-radius: 25px;
@@ -159,6 +195,7 @@ h2 {
 }
 
 .fifth-img {
+  max-width: 300px;
   height: 230px;
   width: 170px;
   border-radius: 10px;
@@ -210,50 +247,126 @@ h2 {
   }
 }
 
-/* GRID AREA */
-.header {
-  grid-area: header;
-}
-
-.body {
-  grid-area: body;
-}
-
-.footer {
-  grid-area: footer;
-}
-
-.overallContainer {
-  display: grid;
-  width: 100%;
-  /* background-color: blue; */
-  grid-template-areas: 
-  "header header header  header header header"
-  "body body body body body body"
-  "footer footer footer footer footer footer"
-  ;
-}
-
-
-@media screen and (max-width: 800px) {
-  .overallContainer{
+@media (min-width: 360px) {
+  body {
     overflow: hidden;
-    height: 880px;
-  }
-  
-  .logo{
-    display: block;
-    position: relative;
-    font-size: 70px;
-    line-height: 1;
-    margin-bottom: 50px;
-    margin-top: 10px
   }
 
-  .menu{
+  .header {
+    max-width: 100%;
+  }
+
+  .logo {
+    font-size: 40px;
+    margin-left: 10px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 85%;
+  }
+
+  .nav-links {
     position: fixed;
-    left: ;
-    top: auto;
-    bottom: 0;
+    top: 100px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #858282;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    transition: 0.1s;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .write-up-corner {
+    position: absolute;
+    top: 15%;
+    height: 200px;
+  }
+
+  .write-up-corner p {
+    font-size: 17px;
+    margin-bottom: 7px;
+  }
+  .write-up-corner span {
+    font-size: 22px;
+  }
+  .write-up-corner h2 {
+    font-size: 30px;
+    letter-spacing: 0.2px;
+    line-height: 1.3;
+  }
+  .write-up-corner button {
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .img-corner {
+    display: none;
+  }
+
+.slideshow-container {
+  width: 100%;
+  max-width: 150px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  width: 300%;
+}
+
+.slide-pair {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: center;
+  gap: 10px;
+}
+
+.slide-pair img {
+  width: 40%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+   
+  img {
+    width: 120px;
+    height: auto;
+    position: static !important;
+    margin: 0;
+    padding: 0;
+    flex: 1 1 45%;
+    max-width: 32%;
+  }
+}
+
+@media (min-width: 769px) {
+  .slideshow {
+    display: block;
   }
 }

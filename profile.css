@@ -1,100 +1,332 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --bodyColor: rgb(230, 227, 220);
+  --buttonColor: rgb(235, 107, 61);
 }
 
-.size-6{
-    height: 50px;
-    width: 50px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.profile-picture{
-    width: 200px;
-    height: 150px;
-    margin: 0 auto;
-      position: relative;
+body {
+  overflow: none;
+  background-color: var(--bodyColor);
+  font-family: "Montserrat", serif;
 }
 
-.picture{
-    height: 100px;
-    width: 200px;
-    stroke: black;  
+.blur{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 5;
 }
 
-.gallery{
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 2%;
-    left: 60%;
-    stroke: grey;
+.cancel{
+ font-weight: bolder;
+ font-size: 30px;
+ cursor: pointer;
+ position: relative;
+ top: -7%;
+ left: 40%;
+
 }
 
-.user{
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
- 
+.size-6 {
+  height: 50px;
+  width: 50px;
 }
 
-.edit{
-    width: 20px;
-    height: 20px;
-    stroke: grey;
+.sign-up-popup {
+  margin-top: 20px;
+  padding: 10px;
+  height: 380px;
+  width: 550px;
+  margin: 0 auto;
+  background-color: #bfbaba;
+  border-radius: 20px;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: dramaticEnterance 0.4s ease-in-out;
 }
 
-.usernameArea{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+@keyframes dramaticEnterance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.register-popup{
-    height: 550px;
-    width: 300px;
-    margin: 0 auto;
-    background-color: rgb(231, 225, 225);
-    border-radius: 20px;
+.sign-up-popup button {
+  margin-left: 0px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
 }
 
-.info-section{
-    width: 250px;
-    margin-left: 20px;
-    border: 2px inset black;
-    padding: 30px 0px 30px 30px;
-    border-radius: 20px;
-    margin-top: -10px;
+.create {
+  font-size: 20px;
+
 }
 
-.create{
-    margin-top: -10px;
-    margin-bottom: 14px;
-    font-size: 20px;
+.category {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  /* display: flex; */
 }
 
-.category{
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 6px;
+input {
+  height: 30px;
+  width: 200px;
+  border-radius: 8px;
+  border-color: transparent;
+  margin-bottom: 10px;
 }
 
-.input{
-    height: 30px;
-    width: 200px;
-    border-radius: 8px;
-    border-color:  transparent;
-    margin-bottom: 10px;
+.check {
+  width: 10px;
+  height: 10px;
 }
 
-.check{
-    width: 10px;
-    height: 10px;
+.log-in-btn,
+.sign-up-btn {
+  width: 120px;
+  padding: 13px;
+  background-color: transparent;
+  border-radius: 15px;
+  border-width: 1.5px;
+  border-style: groove;
+  font-weight: bolder;
+  font-size: 15px;
+  box-shadow: 3px 3px 3px rgb(65, 63, 63);
+  transition: 0.5s all ease-in;
+  font-family: "Montserrat", serif;
+  cursor: pointer;
 }
 
-.info-section button{
-    margin-left: 40px;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 12px;
+.log-in-btn:hover,
+.sign-up-btn:hover {
+  background-color: var(--buttonColor);
+}
+
+.hidden {
+  display: none;
+}
+
+.register {
+  display: flex;
+  gap: 50px;
+  position: absolute;
+  top: 4%;
+  right: 6%;
+}
+
+.action-btn {
+  margin-left: 40px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  align-self: center;
+  justify-self: center;
+  /* display: block; */
+}
+
+.already {
+  margin-top: 10px;
+}
+
+.suggestion {
+  color: rgb(51, 133, 227);
+  margin: 0px 7px;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.8;
+}
+
+/* Log-in popup */
+.log-in-popup {
+  height: 300px;
+  margin-top: 20px;
+  padding: 10px;
+  height: 350px;
+  width: 550px;
+  margin: 0 auto;
+  background-color: #bfbaba;
+  border-radius: 20px;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: dramaticEnterance 0.4s ease-in-out;
+}
+
+.log-in-btnII {
+  margin-left: 0px;
+  margin-top: 10px;
+  padding: 10px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.client-dashboard {
+  border-radius: 12px;
+  margin: 100px 20px;
+  max-width: 600px;
+}
+.client-dashboard h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.client-dashboard ul {
+  list-style: none;
+  padding: 0;
+}
+.client-dashboard li {
+  margin: 15px 0;
+}
+.client-dashboard a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  color: #8c5f37;
+  transition: color 0.3s ease;
+}
+.client-dashboard a:hover {
+  color: #d1975c;
+}
+
+
+
+
+
+/* Testimonials */
+.testimonials {
+  background-color: #f7f2ee;
+  padding: 50px 40px;
+  margin: 60px auto;
+  max-width: 700px;
+  height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", sans-serif;
+}
+.testimonials h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.testimonial-container {
+  overflow: hidden;
+  position: relative;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.testimonial-slider div {
+  min-width: 100%;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  border-left: 6px solid orangered;
+  border-radius: 4px;
+}
+
+.testimonial-slider p {
+  font-size: 18px;
+  color: #3e2c23;
+  line-height: 1.6;
+  animation: slideIn 0.5s ease-in-out
+}
+
+.testimonial-slider strong {
+  display: block;
+  margin-top: 10px;
+  color: #9c674b;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.testimonial-slider {
+  display: flex;
+  justify-content: flex-start;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+@keyframes slideIn{
+  0%{
+    opacity: 0;
+    color:antiquewhite;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+.testimonial-slider.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+
+#feedback-form {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 0 auto;
+}
+#feedback-form h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #5a3622;
+}
+#feedback-form input,
+#feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+#feedback-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+#feedback-form button {
+  background-color: #8c5f37;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#feedback-form button:hover {
+  background-color: #a8734b;
 }
