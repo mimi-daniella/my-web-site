@@ -12,6 +12,10 @@ const body = document.body;
 
 const writeUps = document.querySelector(".write-up-corner");
 
+const slideShow = document.querySelector(".slideshow-container");
+
+const pics = document.querySelectorAll(".slide-pair");
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
     header.classList.add("sticky");
@@ -22,10 +26,23 @@ window.addEventListener("scroll", () => {
   }
 });
 
+const toggleState = [0, 1];
+let current = 0;
+
+
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
   hamburger.classList.toggle("active");
   writeUps.classList.toggle("hidden");
+  slideShow.classList.toggle("hidden");
+
+  if (toggleState[current] === 1) {
+    slideShow.style.opacity = "1";
+  } else {
+    slideShow.style.opacity = "0";
+  }
+
+  current = (current + 1) % toggleState.length;
 });
 
 const track = document.querySelector(".carousel-track");
